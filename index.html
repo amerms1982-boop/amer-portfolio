@@ -308,7 +308,7 @@
                 padding: 1rem;
             }
         }
-        .sp-th.active{border-color: var(--accent) !important;}
+        .pj-th.active{border-color: var(--accent) !important;}
         @media (max-width: 760px){ .sp-layout{grid-template-columns: 1fr !important;} }
     </style>
 </head>
@@ -321,8 +321,9 @@
         <button class="nav-pill" onclick="goToSlide(2)">Services</button>
         <button class="nav-pill" onclick="goToSlide(3)">Project 01</button>
         <button class="nav-pill" onclick="goToSlide(4)">Project 02</button>
-        <button class="nav-pill" onclick="goToSlide(5)">Education</button>
-        <button class="nav-pill" onclick="goToSlide(6)">Contact</button>
+        <button class="nav-pill" onclick="goToSlide(5)">Project 03</button>
+        <button class="nav-pill" onclick="goToSlide(6)">Education</button>
+        <button class="nav-pill" onclick="goToSlide(7)">Contact</button>
     </nav>
 
     <div class="deck-container">
@@ -440,83 +441,93 @@
                 <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
                     <div>
                         <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A bilingual (Arabic / English) inventory and warehouse management system with FEFO smart issuing, expiry and reorder alerts, multi-warehouse control, approval workflows and granular user permissions. Fully responsive, with light / dark themes and custom branding.</p>
-                        <ul style="margin:0 0 0.75rem 0;">
-                            <li><strong>Smart Stock Control:</strong> FEFO issuing, batch expiry tracking and multi-warehouse transfers.</li>
-                            <li><strong>Secure Access:</strong> Per-user View, Create, Edit, Delete and Print permissions with approvals.</li>
-                        </ul>
+                        <ul style="margin:0 0 0.75rem 0;"><li><strong>Smart Stock Control:</strong> FEFO issuing, batch expiry tracking and multi-warehouse transfers.</li><li><strong>Secure Access:</strong> Per-user View, Create, Edit, Delete and Print permissions with approvals.</li></ul>
                         <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0.75rem;">
                             <div style="color: var(--accent); margin-bottom: 0.2rem;">// System Capabilities</div>
-                            <div>+ FEFO Smart Issuing &amp; Expiry Alerts</div>
-                            <div>+ Printable Vouchers &amp; Approvals</div>
-                            <div>+ Custom Permission Matrix</div>
-                            <div>+ AR/EN, Light/Dark, Mobile Ready</div>
+                            <div>+ FEFO Smart Issuing &amp; Expiry Alerts</div><div>+ Printable Vouchers &amp; Approvals</div><div>+ Custom Permission Matrix</div><div>+ AR/EN, Light/Dark, Mobile Ready</div>
                         </div>
-                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                            <a href="https://amerms1982-boop.github.io/stockpro/demo.html" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; background: var(--accent); color:#0b0f19; font-weight:600; font-size:0.85rem; text-decoration:none;">Try the Live Demo</a>
-
-                        </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;"><a href="https://amerms1982-boop.github.io/stockpro/demo.html" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; background: var(--accent); color:#0b0f19; font-weight:600; font-size:0.85rem; text-decoration:none;">Try the Live Demo</a></div>
                     </div>
                     <div>
-                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', spIdx)">
-                            <img id="spMain" src="sp-dashboard.webp" alt="StockPro Dashboard" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project1')">
+                            <img id="pjMain-project1" src="sp-dashboard.webp" alt="Dashboard & Alerts" style="width: 100%; height: 100%; object-fit: contain;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
-                                <h4 id="spCap" style="font-size: 0.8rem; color: #fff; margin: 0;">Dashboard &amp; Alerts (Click to Enlarge)</h4>
+                                <h4 id="pjCap-project1" style="font-size: 0.8rem; color: #fff; margin: 0;">Dashboard & Alerts (Click to Enlarge)</h4>
                             </div>
                         </div>
                         <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
-                            <div class="sp-th active" data-i="0" title="Dashboard &amp; Alerts" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(0)"><img src="sp-dashboard.webp" alt="Dashboard &amp; Alerts" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="1" title="Smart Issuing (FEFO)" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(1)"><img src="sp-bulk_out.webp" alt="Smart Issuing (FEFO)" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="2" title="Approvals" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(2)"><img src="sp-approvals.webp" alt="Approvals" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="3" title="Permissions" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(3)"><img src="sp-permissions.webp" alt="Permissions" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="4" title="Custom Branding" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(4)"><img src="sp-branding.webp" alt="Custom Branding" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="5" title="Mobile View" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(5)"><img src="sp-mobile_note.webp" alt="Mobile View" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+                            <div class="pj-th active" data-g="project1" data-i="0" title="Dashboard &amp; Alerts" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',0)"><img src="sp-dashboard.webp" alt="Dashboard &amp; Alerts" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project1" data-i="1" title="Smart Issuing (FEFO)" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',1)"><img src="sp-bulk_out.webp" alt="Smart Issuing (FEFO)" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project1" data-i="2" title="Approvals" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',2)"><img src="sp-approvals.webp" alt="Approvals" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project1" data-i="3" title="Permissions" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',3)"><img src="sp-permissions.webp" alt="Permissions" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project1" data-i="4" title="Custom Branding" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',4)"><img src="sp-branding.webp" alt="Custom Branding" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project1" data-i="5" title="Mobile View" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project1',5)"><img src="sp-mobile_note.webp" alt="Mobile View" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 5: Project 2 - Sales Analytics Dashboard -->
+        <!-- Slide 5: Project 2 - StockPro Landing Page -->
         <div class="slide">
             <span class="slide-tag">Portfolio - Project 02</span>
-            <h2>Sales Analytics <span class="gradient-text">& Dashboard</span></h2>
-            
+            <h2>StockPro <span class="gradient-text">Landing Page</span></h2>
+
             <div class="info-card" style="margin-top: 1rem;">
-                <div class="project-meta">DATA ANALYTICS</div>
-                <p style="font-size:0.95rem; margin-bottom: 0.75rem;">Executive sales comparison dashboard analyzing year-over-year tonnage sales (2024 vs 2025), competitor market share breakdown, and product line growth performance.</p>
-                
-                <div class="grid-2" style="gap: 1rem; margin-bottom: 0.75rem;">
+                <div class="project-meta">LANDING PAGE DESIGN &amp; DEVELOPMENT</div>
+                <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
                     <div>
-                        <ul style="margin:0;">
-                            <li><strong>YoY Growth Rate:</strong> +30.1% (+822 Tons YoY).</li>
-                            <li><strong>Market Shares:</strong> Donut distribution across major brands (Shell, OLA, Mobile).</li>
-                        </ul>
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A fast, fully responsive bilingual landing page built to present and promote the StockPro system: a clear value proposition, problem / solution sections, feature cards, an interactive screens gallery, FAQ and a live-demo call to action.</p>
+                        <ul style="margin:0 0 0.75rem 0;"><li><strong>Arabic / English:</strong> One-click RTL / LTR language switch, with screenshots that match the selected language.</li><li><strong>Light / Dark:</strong> Theme toggle that remembers the visitor's choice, on every screen size.</li></ul>
+                        <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+                            <div style="color: var(--accent); margin-bottom: 0.2rem;">// Page Highlights</div>
+                            <div>+ Hero, Problems &amp; Solutions, Features</div><div>+ Interactive Screens Gallery</div><div>+ Live Demo Call to Action</div><div>+ Responsive: Desktop, Tablet, Phone</div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;"><a href="https://amerms1982-boop.github.io/stockpro/" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; background: var(--accent); color:#0b0f19; font-weight:600; font-size:0.85rem; text-decoration:none;">View Live Page</a></div>
                     </div>
-                    <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1;">
-                        <div style="color: #3b82f6; margin-bottom: 0.2rem;">// Key Performance Metrics</div>
-                        <div>+ Total Sales 2024: 2,727 Tons</div>
-                        <div>+ Total Sales 2025: 3,549 Tons</div>
-                        <div>+ Shell Growth Rate: +60.0%</div>
-                        <div>+ Mobile Growth Rate: +33.6%</div>
-                    </div>
-                </div>
-
-                <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 110px; cursor: pointer; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project2', 0)">
-                    <img src="13.jpg" alt="Sales Dashboard" style="width: 100%; height: 100%; object-fit: contain;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.3rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.6)); text-align: center;">
-                        <h4 style="font-size: 0.75rem; color: #fff; margin: 0;">Total Sales Tonnage Comparison & YoY Growth</h4>
-                    </div>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                    <div style="height: 75px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; position: relative; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project2', 1)">
-                        <img src="14.jpg" style="width: 100%; height: 100%; object-fit: contain;">
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); padding: 0.1rem 0.3rem; font-size: 0.65rem; color:#fff; text-align: center;">Market Share 2025</div>
-                    </div>
-                    <div style="height: 75px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; position: relative; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project2', 2)">
-                        <img src="15.jpg" style="width: 100%; height: 100%; object-fit: contain;">
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); padding: 0.1rem 0.3rem; font-size: 0.65rem; color:#fff; text-align: center;">Volume Comparison</div>
+                    <div>
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project2')">
+                            <img id="pjMain-project2" src="lp-hero.webp" alt="Hero Section" style="width: 100%; height: 100%; object-fit: contain;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
+                                <h4 id="pjCap-project2" style="font-size: 0.8rem; color: #fff; margin: 0;">Hero Section (Click to Enlarge)</h4>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
+                            <div class="pj-th active" data-g="project2" data-i="0" title="Hero Section" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',0)"><img src="lp-hero.webp" alt="Hero Section" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project2" data-i="1" title="Features Overview" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',1)"><img src="lp-features.webp" alt="Features Overview" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project2" data-i="2" title="Smart Issuing Explained" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',2)"><img src="lp-fefo.webp" alt="Smart Issuing Explained" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project2" data-i="3" title="Interactive Screens Gallery" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',3)"><img src="lp-screens.webp" alt="Interactive Screens Gallery" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project2" data-i="4" title="Brand Customization" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',4)"><img src="lp-brand.webp" alt="Brand Customization" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project2" data-i="5" title="Mobile Section" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project2',5)"><img src="lp-pocket.webp" alt="Mobile Section" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 6: Education & Certifications -->
+        <!-- Slide 6: Project 3 - Sales Analytics Dashboard -->
+        <div class="slide">
+            <span class="slide-tag">Portfolio - Project 03</span>
+            <h2>Sales Analytics <span class="gradient-text">&amp; Dashboard</span></h2>
+
+            <div class="info-card" style="margin-top: 1rem;">
+                <div class="project-meta">DATA ANALYTICS</div>
+                <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
+                    <div>
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">Executive sales comparison dashboard analyzing year-over-year tonnage sales (2024 vs 2025), market share by brand, and growth performance by product line.</p>
+                        <ul style="margin:0 0 0.75rem 0;"><li><strong>YoY Growth Rate:</strong> +30.1% (+822 Tons YoY).</li><li><strong>Market Shares:</strong> Donut distribution across the major brands.</li></ul>
+                        <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+                            <div style="color: #3b82f6; margin-bottom: 0.2rem;">// Key Performance Metrics</div>
+                            <div>+ Total Sales 2024: 2,727 Tons</div><div>+ Total Sales 2025: 3,549 Tons</div><div>+ Shell Growth Rate: +60.8%</div><div>+ Mobile Growth Rate: +33.6%</div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project3')">
+                            <img id="pjMain-project3" src="13.jpg" alt="Executive Dashboard 2024 vs 2025" style="width: 100%; height: 100%; object-fit: contain;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
+                                <h4 id="pjCap-project3" style="font-size: 0.8rem; color: #fff; margin: 0;">Executive Dashboard 2024 vs 2025 (Click to Enlarge)</h4>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
+                            <div class="pj-th active" data-g="project3" data-i="0" title="Executive Dashboard 2024 vs 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',0)"><img src="13.jpg" alt="Executive Dashboard 2024 vs 2025" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project3" data-i="1" title="Market Share 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',1)"><img src="14.jpg" alt="Market Share 2025" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="pj-th" data-g="project3" data-i="2" title="Volume Comparison by Item" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',2)"><img src="15.jpg" alt="Volume Comparison by Item" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Education & Certifications -->
         <div class="slide">
             <span class="slide-tag">Qualifications</span>
             <h2>Education & <span class="gradient-text">Certifications</span></h2>
@@ -585,7 +596,7 @@
             </div>
         </div>
 
-        <!-- Slide 7: Contact Info -->
+        <!-- Slide 8: Contact Info -->
         <div class="slide" id="contact">
             <span class="slide-tag">Connect</span>
             <h2>Contact & <span class="gradient-text">Communication</span></h2>
@@ -611,7 +622,7 @@
 
     <!-- Navigation Footer -->
     <div class="footer">
-        <div class="slide-counter" id="slideCounter">Slide 1 of 7</div>
+        <div class="slide-counter" id="slideCounter">Slide 1 of 8</div>
         <div class="nav-btns">
             <button class="btn" id="prevBtn" onclick="changeSlide(-1)">Previous</button>
             <button class="btn btn-primary" id="nextBtn" onclick="changeSlide(1)">Next</button>
@@ -690,7 +701,8 @@
         // Image Gallery Groups Setup
         const imageGroups = {
             project1: ['sp-dashboard.webp', 'sp-bulk_out.webp', 'sp-approvals.webp', 'sp-permissions.webp', 'sp-branding.webp', 'sp-mobile_note.webp'],
-            project2: ['13.jpg', '14.jpg', '15.jpg']
+            project2: ['lp-hero.webp', 'lp-features.webp', 'lp-fefo.webp', 'lp-screens.webp', 'lp-brand.webp', 'lp-pocket.webp'],
+            project3: ['13.jpg', '14.jpg', '15.jpg']
         };
         let currentGroupKey = null;
         let currentIndex = 0;
@@ -724,14 +736,19 @@
             document.getElementById('imageModal').style.display = 'none';
         }
 
-        const spCaps = ['Dashboard & Alerts','Smart Issuing (FEFO)','Approvals','Permissions','Custom Branding','Mobile View'];
-        let spIdx = 0;
-        function spShow(i) {
-            spIdx = i;
-            document.getElementById('spMain').src = imageGroups.project1[i];
-            document.getElementById('spCap').textContent = spCaps[i] + ' (Click to Enlarge)';
-            document.querySelectorAll('.sp-th').forEach(function (el) { el.classList.toggle('active', +el.dataset.i === i); });
+        const pjCaps = {
+            project1: ['Dashboard & Alerts', 'Smart Issuing (FEFO)', 'Approvals', 'Permissions', 'Custom Branding', 'Mobile View'],
+            project2: ['Hero Section', 'Features Overview', 'Smart Issuing Explained', 'Interactive Screens Gallery', 'Brand Customization', 'Mobile Section'],
+            project3: ['Executive Dashboard 2024 vs 2025', 'Market Share 2025', 'Volume Comparison by Item']
+        };
+        const pjIdx = { project1: 0, project2: 0, project3: 0 };
+        function pjShow(g, i) {
+            pjIdx[g] = i;
+            document.getElementById('pjMain-' + g).src = imageGroups[g][i];
+            document.getElementById('pjCap-' + g).textContent = pjCaps[g][i] + ' (Click to Enlarge)';
+            document.querySelectorAll('.pj-th[data-g="' + g + '"]').forEach(function (el) { el.classList.toggle('active', +el.dataset.i === i); });
         }
+        function pjOpen(g) { openModalGroup(g, pjIdx[g]); }
 
         updateSlide();
     </script>
