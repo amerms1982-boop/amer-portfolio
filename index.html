@@ -308,6 +308,8 @@
                 padding: 1rem;
             }
         }
+        .sp-th.active{border-color: var(--accent) !important;}
+        @media (max-width: 760px){ .sp-layout{grid-template-columns: 1fr !important;} }
     </style>
 </head>
 <body>
@@ -435,40 +437,36 @@
 
             <div class="info-card" style="margin-top: 1rem;">
                 <div class="project-meta">WEB SYSTEM - INVENTORY &amp; WAREHOUSE MANAGEMENT</div>
-                <p style="font-size:0.95rem; margin-bottom: 0.75rem;">A bilingual (Arabic / English) inventory and warehouse management system with FEFO smart issuing, expiry and reorder alerts, multi-warehouse control, approval workflows and granular user permissions. Fully responsive, with light / dark themes and custom branding.</p>
-
-                <div class="grid-2" style="gap: 1rem; margin-bottom: 0.75rem;">
+                <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
                     <div>
-                        <ul style="margin:0;">
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A bilingual (Arabic / English) inventory and warehouse management system with FEFO smart issuing, expiry and reorder alerts, multi-warehouse control, approval workflows and granular user permissions. Fully responsive, with light / dark themes and custom branding.</p>
+                        <ul style="margin:0 0 0.75rem 0;">
                             <li><strong>Smart Stock Control:</strong> FEFO issuing, batch expiry tracking and multi-warehouse transfers.</li>
                             <li><strong>Secure Access:</strong> Per-user View, Create, Edit, Delete and Print permissions with approvals.</li>
-                            <li><a href="https://amerms1982-boop.github.io/stockpro/demo.html" target="_blank" rel="noopener" style="color: var(--accent);">Try the Live Demo</a> | <a href="https://amerms1982-boop.github.io/stockpro/" target="_blank" rel="noopener" style="color: var(--accent);">Landing Page</a></li>
                         </ul>
+                        <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+                            <div style="color: var(--accent); margin-bottom: 0.2rem;">// System Capabilities</div>
+                            <div>+ FEFO Smart Issuing &amp; Expiry Alerts</div>
+                            <div>+ Printable Vouchers &amp; Approvals</div>
+                            <div>+ Custom Permission Matrix</div>
+                            <div>+ AR/EN, Light/Dark, Mobile Ready</div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                            <a href="https://amerms1982-boop.github.io/stockpro/demo.html" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; background: var(--accent); color:#0b0f19; font-weight:600; font-size:0.85rem; text-decoration:none;">Try the Live Demo</a>
+                            <a href="https://amerms1982-boop.github.io/stockpro/" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; border:1px solid var(--accent); color: var(--accent); font-weight:600; font-size:0.85rem; text-decoration:none;">Landing Page</a>
+                        </div>
                     </div>
-                    <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: #cbd5e1;">
-                        <div style="color: var(--accent); margin-bottom: 0.2rem;">// System Capabilities</div>
-                        <div>+ FEFO Smart Issuing &amp; Expiry Alerts</div>
-                        <div>+ Printable Vouchers &amp; Approvals</div>
-                        <div>+ Custom Permission Matrix</div>
-                        <div>+ AR/EN, Light/Dark, Mobile Ready</div>
+                    <div>
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', spIdx)">
+                            <img id="spMain" src="sp-dashboard.webp" alt="StockPro Dashboard" style="width: 100%; height: 100%; object-fit: contain;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
+                                <h4 id="spCap" style="font-size: 0.8rem; color: #fff; margin: 0;">Dashboard &amp; Alerts (Click to Enlarge)</h4>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
+                            <div class="sp-th active" data-i="0" title="Dashboard &amp; Alerts" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(0)"><img src="sp-dashboard.webp" alt="Dashboard &amp; Alerts" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="1" title="Smart Issuing (FEFO)" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(1)"><img src="sp-bulk_out.webp" alt="Smart Issuing (FEFO)" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="2" title="Approvals" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(2)"><img src="sp-approvals.webp" alt="Approvals" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="3" title="Permissions" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(3)"><img src="sp-permissions.webp" alt="Permissions" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="4" title="Custom Branding" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(4)"><img src="sp-branding.webp" alt="Custom Branding" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div><div class="sp-th" data-i="5" title="Mobile View" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:#0b0f19;display:flex;align-items:center;justify-content:center;" onclick="spShow(5)"><img src="sp-mobile_note.webp" alt="Mobile View" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+                        </div>
                     </div>
-                </div>
-
-                <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: #0b0f19; height: 200px; cursor: pointer; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 0)">
-                    <img src="sp-dashboard.webp" alt="StockPro Dashboard" style="width: 100%; height: 100%; object-fit: contain;">
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.6)); text-align: center;">
-                        <h4 style="font-size: 0.8rem; color: #fff; margin: 0;">Dashboard &amp; Inventory Alerts (Click to Enlarge)</h4>
-                    </div>
-                </div>
-
-                <p style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 0.4rem;">System Screenshots (Click any to view):</p>
-                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 0)"><img src="sp-dashboard.webp" style="width:100%; height:100%; object-fit:contain;"></div>
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 1)"><img src="sp-bulk_out.webp" style="width:100%; height:100%; object-fit:contain;"></div>
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 2)"><img src="sp-approvals.webp" style="width:100%; height:100%; object-fit:contain;"></div>
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 3)"><img src="sp-permissions.webp" style="width:100%; height:100%; object-fit:contain;"></div>
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 4)"><img src="sp-branding.webp" style="width:100%; height:100%; object-fit:contain;"></div>
-                    <div style="height: 45px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; background: #0b0f19; display: flex; align-items: center; justify-content: center;" onclick="openModalGroup('project1', 5)"><img src="sp-mobile_note.webp" style="width:100%; height:100%; object-fit:contain;"></div>
                 </div>
             </div>
         </div>
@@ -724,6 +722,15 @@
 
         function closeModalDirect() {
             document.getElementById('imageModal').style.display = 'none';
+        }
+
+        const spCaps = ['Dashboard & Alerts','Smart Issuing (FEFO)','Approvals','Permissions','Custom Branding','Mobile View'];
+        let spIdx = 0;
+        function spShow(i) {
+            spIdx = i;
+            document.getElementById('spMain').src = imageGroups.project1[i];
+            document.getElementById('spCap').textContent = spCaps[i] + ' (Click to Enlarge)';
+            document.querySelectorAll('.sp-th').forEach(function (el) { el.classList.toggle('active', +el.dataset.i === i); });
         }
 
         updateSlide();
