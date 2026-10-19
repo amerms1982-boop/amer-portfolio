@@ -1103,7 +1103,7 @@
             updateSlide();
             try { localStorage.setItem('pfLang', l); } catch (e) {}
         }
-        function toggleLang() { applyLang(lang === 'ar' ? 'en' : 'ar'); }
+        function toggleLang() { applyLang(lang === 'ar' ? 'en' : 'ar'); equalizeSlides(); }
 
         function toggleTheme() {
             const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
@@ -1118,6 +1118,25 @@
         })();
 
         if (lang === 'ar') applyLang('ar'); else updateSlide();
+        // Make every slide card the same height (tallest slide) on desktop
+        function equalizeSlides() {
+            slides.forEach(s => { s.style.minHeight = ''; });
+            if (window.innerWidth <= 768) return;
+            let m = 0;
+            slides.forEach(s => {
+                const act = s.classList.contains('active');
+                const old = s.style.cssText;
+                if (!act) s.style.cssText = 'display:flex;flex-direction:column;visibility:hidden;position:absolute;left:1rem;right:1rem;width:auto;margin:0 auto;animation:none;';
+                m = Math.max(m, Math.ceil(s.getBoundingClientRect().height));
+                if (!act) s.style.cssText = old;
+            });
+            slides.forEach(s => { s.style.minHeight = m + 'px'; });
+        }
+        let eqT;
+        window.addEventListener('resize', () => { clearTimeout(eqT); eqT = setTimeout(equalizeSlides, 120); });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeSlides);
+        window.addEventListener('load', equalizeSlides);
+        equalizeSlides();
     </script>
 </body>
 </html>
