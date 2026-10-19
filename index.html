@@ -450,6 +450,11 @@
         html[dir="rtl"] .slide-tag { letter-spacing: 0; }
         html[dir="rtl"] .project-meta { letter-spacing: 0; }
         html[dir="rtl"] #imageModal { direction: ltr; }
+        /* Uniform card size on desktop so the page does not jump between slides */
+        @media (min-width: 769px) {
+            .deck-container { align-items: flex-start; }
+            .slide.active { display: flex; flex-direction: column; justify-content: center; min-height: 650px; }
+        }
         .pj-th.active{border-color: var(--accent) !important;}
         @media (max-width: 760px){ .sp-layout{grid-template-columns: 1fr !important;} }
     </style>
