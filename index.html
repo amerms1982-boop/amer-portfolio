@@ -707,13 +707,18 @@
             prevBtn.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
             
             if (currentSlide === slides.length - 1) {
-                nextBtn.textContent = "Finish";
+                nextBtn.textContent = "Back to Top";
             } else {
                 nextBtn.textContent = "Next";
             }
         }
 
         function changeSlide(direction) {
+            if (direction > 0 && currentSlide === slides.length - 1) {
+                currentSlide = 0;
+                updateSlide();
+                return;
+            }
             currentSlide += direction;
             if (currentSlide < 0) currentSlide = 0;
             if (currentSlide >= slides.length) currentSlide = slides.length - 1;
