@@ -77,6 +77,43 @@
             box-shadow: 0 2px 10px rgba(6, 182, 212, 0.4);
         }
 
+        .nav-pill .caret { font-size: 0.65rem; margin-left: 0.2rem; }
+        .proj-menu {
+            display: none;
+            position: fixed;
+            min-width: 240px;
+            max-width: 92vw;
+            padding: 0.4rem;
+            background: rgba(30, 41, 59, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .proj-menu.open { display: block; }
+        .proj-menu button {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.6rem 0.75rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .proj-menu button:hover { background: rgba(255, 255, 255, 0.07); }
+        .proj-menu button.current { background: rgba(6, 182, 212, 0.18); color: #fff; }
+        .proj-menu .num { color: var(--accent); font-size: 0.75rem; min-width: 1.6rem; }
+
         .deck-container {
             flex: 1;
             display: flex;
@@ -316,15 +353,14 @@
 
     <!-- شريط التنقل العلوي الزجاجي الشفاف بدون أرقام -->
     <nav class="glass-nav">
-        <button class="nav-pill active-pill" onclick="goToSlide(0)">Intro</button>
-        <button class="nav-pill" onclick="goToSlide(1)">Expertise</button>
-        <button class="nav-pill" onclick="goToSlide(2)">Services</button>
-        <button class="nav-pill" onclick="goToSlide(3)">Project 01</button>
-        <button class="nav-pill" onclick="goToSlide(4)">Project 02</button>
-        <button class="nav-pill" onclick="goToSlide(5)">Project 03</button>
-        <button class="nav-pill" onclick="goToSlide(6)">Education</button>
-        <button class="nav-pill" onclick="goToSlide(7)">Contact</button>
+        <button class="nav-pill active-pill" data-slide="0" onclick="goToSlide(0)">Intro</button>
+        <button class="nav-pill" data-slide="1" onclick="goToSlide(1)">Expertise</button>
+        <button class="nav-pill" data-slide="2" onclick="goToSlide(2)">Services</button>
+        <button class="nav-pill" id="projPill" onclick="toggleProjMenu(event)" aria-haspopup="true" aria-expanded="false">Projects <span class="caret">&#9662;</span></button>
+        <button class="nav-pill" data-slide="6" onclick="goToSlide(6)">Education</button>
+        <button class="nav-pill" data-slide="7" onclick="goToSlide(7)">Contact</button>
     </nav>
+    <div class="proj-menu" id="projMenu" role="menu"></div>
 
     <div class="deck-container">
 
@@ -432,7 +468,7 @@
         </div>
 
         <!-- Slide 4: Project 1 - StockPro -->
-        <div class="slide">
+        <div class="slide project-slide" data-menu="Inventory Management">
             <span class="slide-tag">Portfolio - Project 01</span>
             <h2>StockPro <span class="gradient-text">Inventory Management</span></h2>
 
@@ -464,7 +500,7 @@
         </div>
 
         <!-- Slide 5: Project 2 - StockPro Landing Page -->
-        <div class="slide">
+        <div class="slide project-slide" data-menu="Landing Page">
             <span class="slide-tag">Portfolio - Project 02</span>
             <h2><span class="gradient-text">Landing Page</span></h2>
 
@@ -496,7 +532,7 @@
         </div>
 
         <!-- Slide 6: Project 3 - Sales Analytics Dashboard -->
-        <div class="slide">
+        <div class="slide project-slide" data-menu="Sales Analytics &amp; Dashboard">
             <span class="slide-tag">Portfolio - Project 03</span>
             <h2>Sales Analytics <span class="gradient-text">&amp; Dashboard</span></h2>
 
@@ -656,11 +692,14 @@
                 }
             });
 
-            navPills.forEach((pill, index) => {
-                pill.classList.remove('active-pill');
-                if (index === currentSlide) {
-                    pill.classList.add('active-pill');
-                }
+            navPills.forEach((pill) => {
+                const isProjects = pill.id === 'projPill';
+                const on = isProjects ? slides[currentSlide].classList.contains('project-slide') : (+pill.dataset.slide === currentSlide);
+                pill.classList.toggle('active-pill', on);
+            });
+            closeProjMenu();
+            document.querySelectorAll('#projMenu button').forEach((b) => {
+                b.classList.toggle('current', +b.dataset.slide === currentSlide);
             });
 
             counter.textContent = `Slide ${currentSlide + 1} of ${slides.length}`;
@@ -749,6 +788,37 @@
             document.querySelectorAll('.pj-th[data-g="' + g + '"]').forEach(function (el) { el.classList.toggle('active', +el.dataset.i === i); });
         }
         function pjOpen(g) { openModalGroup(g, pjIdx[g]); }
+
+        // Projects dropdown (built from slides marked .project-slide)
+        const projMenu = document.getElementById('projMenu');
+        const projPill = document.getElementById('projPill');
+        slides.forEach((sl, idx) => {
+            if (!sl.classList.contains('project-slide')) return;
+            const b = document.createElement('button');
+            b.setAttribute('role', 'menuitem');
+            b.dataset.slide = idx;
+            const n = projMenu.children.length + 1;
+            b.innerHTML = '<span class="num">' + String(n).padStart(2, '0') + '</span><span>' + sl.dataset.menu + '</span>';
+            b.onclick = function () { goToSlide(idx); };
+            projMenu.appendChild(b);
+        });
+        function closeProjMenu() {
+            projMenu.classList.remove('open');
+            projPill.setAttribute('aria-expanded', 'false');
+        }
+        function toggleProjMenu(e) {
+            e.stopPropagation();
+            if (projMenu.classList.contains('open')) { closeProjMenu(); return; }
+            const r = projPill.getBoundingClientRect();
+            projMenu.classList.add('open');
+            const w = projMenu.offsetWidth;
+            projMenu.style.top = (r.bottom + 8) + 'px';
+            projMenu.style.left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8)) + 'px';
+            projPill.setAttribute('aria-expanded', 'true');
+        }
+        document.addEventListener('click', closeProjMenu);
+        window.addEventListener('resize', closeProjMenu);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProjMenu(); });
 
         updateSlide();
     </script>
