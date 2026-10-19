@@ -453,7 +453,7 @@
         /* Uniform card size on desktop so the page does not jump between slides */
         @media (min-width: 769px) {
             .deck-container { align-items: flex-start; }
-            .slide.active { display: flex; flex-direction: column; justify-content: center; min-height: 650px; }
+            .slide.active { display: flex; flex-direction: column; justify-content: center; }
         }
         .pj-th.active{border-color: var(--accent) !important;}
         @media (max-width: 760px){ .sp-layout{grid-template-columns: 1fr !important;} }
@@ -1120,7 +1120,7 @@
         if (lang === 'ar') applyLang('ar'); else updateSlide();
         // Make every slide card the same height (tallest slide) on desktop
         function equalizeSlides() {
-            slides.forEach(s => { s.style.minHeight = ''; });
+            slides.forEach(s => { s.style.minHeight = ''; s.style.zoom = ''; s.style.maxWidth = ''; });
             if (window.innerWidth <= 768) return;
             let m = 0;
             slides.forEach(s => {
@@ -1130,7 +1130,15 @@
                 m = Math.max(m, Math.ceil(s.getBoundingClientRect().height));
                 if (!act) s.style.cssText = old;
             });
-            slides.forEach(s => { s.style.minHeight = m + 'px'; });
+            // shrink the whole card a little if it would be taller than the screen
+            const ft = document.querySelector('.footer');
+            const top = slides[0].parentElement.getBoundingClientRect().top + 80;
+            const avail = window.innerHeight - (ft ? ft.offsetHeight : 70) - top - 34;
+            const z = Math.max(0.78, Math.min(1, avail / m));
+            slides.forEach(s => {
+                s.style.minHeight = m + 'px';
+                if (z < 1) { s.style.zoom = z; s.style.maxWidth = (1000 / z) + 'px'; }
+            });
         }
         let eqT;
         window.addEventListener('resize', () => { clearTimeout(eqT); eqT = setTimeout(equalizeSlides, 120); });
