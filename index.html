@@ -470,8 +470,8 @@
         <button class="nav-pill" data-slide="1" onclick="goToSlide(1)">Expertise</button>
         <button class="nav-pill" data-slide="2" onclick="goToSlide(2)">Services</button>
         <button class="nav-pill" id="projPill" onclick="toggleProjMenu(event)" aria-haspopup="true" aria-expanded="false">Projects <span class="caret">&#9662;</span></button>
-        <button class="nav-pill" data-slide="6" onclick="goToSlide(6)">Education</button>
-        <button class="nav-pill" data-slide="7" onclick="goToSlide(7)">Contact</button>
+        <button class="nav-pill" data-slide="8" onclick="goToSlide(8)">Education</button>
+        <button class="nav-pill" data-slide="9" onclick="goToSlide(9)">Contact</button>
     </nav>
     <div class="proj-menu" id="projMenu" role="menu"></div>
 
@@ -499,7 +499,7 @@
                 
                 <!-- أزرار التواصل في المنتصف -->
                 <div class="hero-buttons" style="margin-top: 1.25rem;">
-                    <a href="#contact" onclick="goToSlide(7); return false;" class="action-btn btn-get-touch" style="padding: 1.05rem 2.6rem; font-size: 1.15rem;">
+                    <a href="#contact" onclick="goToSlide(9); return false;" class="action-btn btn-get-touch" style="padding: 1.05rem 2.6rem; font-size: 1.15rem;">
                         <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <span>Get In Touch</span>
                     </a>
@@ -664,18 +664,82 @@
                     </div>
                     <div>
                         <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: var(--well); height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project3')">
-                            <img id="pjMain-project3" src="13.jpg" alt="Executive Dashboard 2024 vs 2025" style="width: 100%; height: 100%; object-fit: contain;">
+                            <img id="pjMain-project3" src="sales-dash.webp" alt="Executive Dashboard 2024 vs 2025" style="width: 100%; height: 100%; object-fit: contain;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
                                 <h4 id="pjCap-project3" style="font-size: 0.8rem; color: #fff; margin: 0;">Executive Dashboard 2024 vs 2025 (Click to Enlarge)</h4>
                             </div>
                         </div>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
-                            <div class="pj-th active" data-g="project3" data-i="0" title="Executive Dashboard 2024 vs 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',0)"><img src="13.jpg" alt="Executive Dashboard 2024 vs 2025" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="1" title="Market Share 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',1)"><img src="14.jpg" alt="Market Share 2025" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="2" title="Volume Comparison by Item" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',2)"><img src="15.jpg" alt="Volume Comparison by Item" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div>
-                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.4rem;">
+                            <div class="pj-th active" data-g="project3" data-i="0" title="Executive Dashboard 2024 vs 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',0)"><img src="sales-dash.webp" alt="Executive Dashboard 2024 vs 2025" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="1" title="Sales Volume by Brand" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',1)"><img src="sales-volume.webp" alt="Sales Volume by Brand" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="2" title="Growth by Brand" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',2)"><img src="sales-growth.webp" alt="Growth by Brand" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="3" title="Market Share 2025" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',3)"><img src="sales-share.webp" alt="Market Share 2025" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project3" data-i="4" title="Summary Table" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project3',4)"><img src="sales-table.webp" alt="Summary Table" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Slide 7: Project 4 - Zeytek Car-Oil Store -->
+        <div class="slide project-slide" data-menu="Car-Oil Store" data-menu-ar="متجر زيوت السيارات">
+            <span class="slide-tag">Portfolio - Project 04</span>
+            <h2>Zeytek <span class="gradient-text">Car-Oil Store</span></h2>
+
+            <div class="info-card" style="margin-top: 1rem;">
+                <div class="project-meta">E-COMMERCE - FULL STACK ONLINE STORE</div>
+                <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
+                    <div>
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A bilingual (Arabic / English) online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts and automatic oil-change reminders, plus an admin dashboard for sales and inventory.</p>
+                        <ul style="margin:0 0 0.75rem 0;"><li><strong>Customer Experience:</strong> AI oil-selection assistant, product filters, and reminders by email and browser notification.</li><li><strong>Admin Dashboard:</strong> Sales and inventory KPIs, orders, reports, purchase invoices, and low-stock alerts.</li></ul>
+                        <div style="background: var(--inset-bg); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: var(--inset-text); margin-bottom: 0.75rem;">
+                            <div style="color: var(--accent); margin-bottom: 0.2rem;">// Store Highlights</div>
+                            <div>+ Laravel, PHP &amp; MySQL</div><div>+ AI Oil-Selection Assistant</div><div>+ AR/EN, Light/Dark, Responsive</div><div>+ Delivered Ready to Run</div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: var(--well); height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project4')">
+                            <img id="pjMain-project4" src="zy-home-en.webp" alt="Store Home" style="width: 100%; height: 100%; object-fit: contain;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
+                                <h4 id="pjCap-project4" style="font-size: 0.8rem; color: #fff; margin: 0;">Store Home (Click to Enlarge)</h4>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
+                            <div class="pj-th active" data-g="project4" data-i="0" title="Store Home" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',0)"><img src="zy-home-en.webp" alt="Store Home" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project4" data-i="1" title="Dark &amp; Light Themes" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',1)"><img src="zy-themes.webp" alt="Dark &amp; Light Themes" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project4" data-i="2" title="Shop with Filters" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',2)"><img src="zy-shop.webp" alt="Shop with Filters" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project4" data-i="3" title="AI Oil Assistant" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',3)"><img src="zy-assistant.webp" alt="AI Oil Assistant" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project4" data-i="4" title="Admin Dashboard" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',4)"><img src="zy-admin.webp" alt="Admin Dashboard" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project4" data-i="5" title="Sales Report" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project4',5)"><img src="zy-report.webp" alt="Sales Report" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slide 8: Project 5 - Excel & CSV Data Cleaning -->
+        <div class="slide project-slide" data-menu="Data Cleaning" data-menu-ar="تنظيف البيانات">
+            <span class="slide-tag">Portfolio - Project 05</span>
+            <h2>Excel &amp; CSV <span class="gradient-text">Data Cleaning</span></h2>
+
+            <div class="info-card" style="margin-top: 1rem;">
+                <div class="project-meta">DATA CLEANING &amp; PROCESSING</div>
+                <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
+                    <div>
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">Cleaning and organizing a 1,200-row appliance inventory file: unified product and brand names, text prices converted to numbers, duplicates removed, and a tracking sheet with a summary chart. The original file is kept untouched.</p>
+                        <ul style="margin:0 0 0.75rem 0;"><li><strong>Standardized Data:</strong> Consistent names, brands, and number formats across every column.</li><li><strong>Ready to Use:</strong> A clean tracking sheet plus a summary with a chart, built with Excel, Google Sheets, and Python.</li></ul>
+                        <div style="background: var(--inset-bg); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: var(--inset-text); margin-bottom: 0.75rem;">
+                            <div style="color: var(--accent); margin-bottom: 0.2rem;">// Cleaning Results</div>
+                            <div>+ 1,200 Raw Rows Processed</div><div>+ Duplicates Removed</div><div>+ Text Prices Converted to Numbers</div><div>+ Original File Preserved</div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); background: var(--well); height: 270px; cursor: pointer; margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: center;" onclick="pjOpen('project5')">
+                            <img id="pjMain-project5" src="cl-raw.webp" alt="Raw File (1,200 Rows)" style="width: 100%; height: 100%; object-fit: contain;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 0.4rem 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.5)); text-align: center;">
+                                <h4 id="pjCap-project5" style="font-size: 0.8rem; color: #fff; margin: 0;">Raw File (1,200 Rows) (Click to Enlarge)</h4>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem;">
+                            <div class="pj-th active" data-g="project5" data-i="0" title="Raw File (1,200 Rows)" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project5',0)"><img src="cl-raw.webp" alt="Raw File (1,200 Rows)" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project5" data-i="1" title="Cleaning Steps" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project5',1)"><img src="cl-steps.webp" alt="Cleaning Steps" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project5" data-i="2" title="Clean Data Sheet" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project5',2)"><img src="cl-clean.webp" alt="Clean Data Sheet" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div><div class="pj-th" data-g="project5" data-i="3" title="Summary &amp; Chart" style="height:52px;border-radius:6px;overflow:hidden;border:2px solid var(--border-color);cursor:pointer;background:var(--well);display:flex;align-items:center;justify-content:center;" onclick="pjShow('project5',3)"><img src="cl-summary.webp" alt="Summary &amp; Chart" style="width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Slide 7: Education & Certifications -->
         <div class="slide">
@@ -880,12 +944,16 @@
             en: {
                 project1: ['sp-dashboard.webp', 'sp-bulk_out.webp', 'sp-approvals.webp', 'sp-permissions.webp', 'sp-branding.webp', 'sp-mobile_note.webp'],
                 project2: ['lp-hero.webp', 'lp-features.webp', 'lp-fefo.webp', 'lp-problems.webp', 'lp-steps.webp', 'lp-whofor.webp'],
-                project3: ['13.jpg', '14.jpg', '15.jpg']
+                project3: ['sales-dash.webp', 'sales-volume.webp', 'sales-growth.webp', 'sales-share.webp', 'sales-table.webp'],
+                project4: ['zy-home-en.webp', 'zy-themes.webp', 'zy-shop.webp', 'zy-assistant.webp', 'zy-admin.webp', 'zy-report.webp'],
+                project5: ['cl-raw.webp', 'cl-steps.webp', 'cl-clean.webp', 'cl-summary.webp']
             },
             ar: {
                 project1: ['sp-ar-dashboard.webp', 'sp-ar-bulk_out.webp', 'sp-ar-approvals.webp', 'sp-ar-permissions.webp', 'sp-ar-branding.webp', 'sp-ar-mobile_note.webp'],
                 project2: ['lp-ar-hero.webp', 'lp-ar-features.webp', 'lp-ar-fefo.webp', 'lp-ar-problems.webp', 'lp-ar-steps.webp', 'lp-ar-whofor.webp'],
-                project3: ['13.jpg', '14.jpg', '15.jpg']
+                project3: ['sales-dash.webp', 'sales-ar-volume.webp', 'sales-ar-growth.webp', 'sales-ar-share.webp', 'sales-ar-table.webp'],
+                project4: ['zy-showcase.webp', 'zy-themes.webp', 'zy-shop.webp', 'zy-assistant.webp', 'zy-admin.webp', 'zy-report.webp'],
+                project5: ['cl-raw.webp', 'cl-steps.webp', 'cl-clean.webp', 'cl-summary.webp']
             }
         };
         let lang = document.documentElement.getAttribute('lang') === 'ar' ? 'ar' : 'en';
@@ -926,16 +994,20 @@
             en: {
                 project1: ['Dashboard & Alerts', 'Smart Issuing (FEFO)', 'Approvals', 'Permissions', 'Custom Branding', 'Mobile View'],
                 project2: ['Hero Section', 'Features Overview', 'Smart Issuing Explained', 'Problems & Solutions', 'How It Works', 'Who It\'s For'],
-                project3: ['Executive Dashboard 2024 vs 2025', 'Market Share 2025', 'Volume Comparison by Item']
+                project3: ['Executive Dashboard 2024 vs 2025', 'Sales Volume by Brand', 'Growth by Brand', 'Market Share 2025', 'Summary Table'],
+                project4: ['Store Home', 'Dark & Light Themes', 'Shop with Filters', 'AI Oil Assistant', 'Admin Dashboard', 'Sales Report'],
+                project5: ['Raw File (1,200 Rows)', 'Cleaning Steps', 'Clean Data Sheet', 'Summary & Chart']
             },
             ar: {
                 project1: ['لوحة التحكم والتنبيهات', 'الصرف الذكي (FEFO)', 'الموافقات', 'الصلاحيات', 'تخصيص الهوية', 'عرض الموبايل'],
                 project2: ['القسم الرئيسي', 'نظرة على المميزات', 'شرح الصرف الذكي', 'المشاكل والحلول', 'طريقة العمل', 'لمن النظام مناسب'],
-                project3: ['لوحة المبيعات التنفيذية 2024 مقابل 2025', 'حصة السوق 2025', 'مقارنة الأحجام حسب الصنف']
+                project3: ['لوحة المبيعات التنفيذية 2024 مقابل 2025', 'مقارنة المبيعات حسب العلامة', 'النمو حسب العلامة', 'حصة السوق 2025', 'جدول الملخص'],
+                project4: ['واجهة المتجر', 'الوضع الداكن والفاتح', 'المتجر والتصفية', 'مساعد اختيار الزيت', 'لوحة تحكم المدير', 'تقرير المبيعات'],
+                project5: ['الملف الخام (1,200 صف)', 'خطوات التنظيف', 'الجدول بعد التنظيف', 'الملخص والرسم البياني']
             }
         };
         let pjCaps = PJ_CAPS[lang];
-        const pjIdx = { project1: 0, project2: 0, project3: 0 };
+        const pjIdx = { project1: 0, project2: 0, project3: 0, project4: 0, project5: 0 };
         function pjShow(g, i) {
             pjIdx[g] = i;
             document.getElementById('pjMain-' + g).src = imageGroups[g][i];
@@ -1056,6 +1128,28 @@
             '+ Total Sales 2025: 3,549 Tons': '+ إجمالي مبيعات 2025: 3,549 طن',
             '+ Brand E Growth Rate: +60.8%': '+ نمو العلامة E: <bdi dir="ltr">+60.8%</bdi>',
             '+ Brand F Growth Rate: +33.6%': '+ نمو العلامة F: <bdi dir="ltr">+33.6%</bdi>',
+            'Portfolio - Project 04': 'أعمالي - المشروع 04',
+            'Portfolio - Project 05': 'أعمالي - المشروع 05',
+            'Zeytek <span class="gradient-text">Car-Oil Store</span>': 'متجر <span class="gradient-text">زيتك لزيوت السيارات</span>',
+            'E-COMMERCE - FULL STACK ONLINE STORE': 'تجارة إلكترونية - متجر Full Stack',
+            'A bilingual (Arabic / English) online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts and automatic oil-change reminders, plus an admin dashboard for sales and inventory.': 'متجر إلكتروني ثنائي اللغة (عربي / إنجليزي) لزيوت السيارات، بمساعد ذكي يساعد العميل على اختيار الزيت المناسب، وتنبيهات عند توفر المنتج وتذكير تلقائي بموعد تغيير الزيت، مع لوحة تحكم للمدير للمبيعات والمخزون.',
+            '<strong>Customer Experience:</strong> AI oil-selection assistant, product filters, and reminders by email and browser notification.': '<strong>تجربة العميل:</strong> مساعد ذكي لاختيار الزيت ومرشحات للمنتجات وتذكيرات عبر البريد الإلكتروني وإشعارات المتصفح.',
+            '<strong>Admin Dashboard:</strong> Sales and inventory KPIs, orders, reports, purchase invoices, and low-stock alerts.': '<strong>لوحة تحكم المدير:</strong> مؤشرات المبيعات والمخزون والطلبات والتقارير وفواتير الشراء وتنبيهات نقص المخزون.',
+            '// Store Highlights': '// أبرز ما في المتجر',
+            '+ Laravel, PHP &amp; MySQL': '+ Laravel وPHP وMySQL',
+            '+ AI Oil-Selection Assistant': '+ مساعد ذكي لاختيار الزيت',
+            '+ AR/EN, Light/Dark, Responsive': '+ عربي/إنجليزي، فاتح/داكن، متجاوب',
+            '+ Delivered Ready to Run': '+ تسليم جاهز للتشغيل',
+            'Excel &amp; CSV <span class="gradient-text">Data Cleaning</span>': 'تنظيف بيانات <span class="gradient-text">Excel وCSV</span>',
+            'DATA CLEANING &amp; PROCESSING': 'تنظيف ومعالجة البيانات',
+            'Cleaning and organizing a 1,200-row appliance inventory file: unified product and brand names, text prices converted to numbers, duplicates removed, and a tracking sheet with a summary chart. The original file is kept untouched.': 'تنظيف وتنظيم ملف مخزون أجهزة منزلية من 1,200 صف: توحيد أسماء المنتجات والماركات وتحويل الأسعار النصية إلى أرقام وإزالة التكرار، مع جدول متابعة وملخص برسم بياني. الملف الأصلي يبقى كما هو.',
+            '<strong>Standardized Data:</strong> Consistent names, brands, and number formats across every column.': '<strong>بيانات موحّدة:</strong> أسماء وماركات وتنسيق أرقام متسق في كل الأعمدة.',
+            '<strong>Ready to Use:</strong> A clean tracking sheet plus a summary with a chart, built with Excel, Google Sheets, and Python.': '<strong>جاهز للاستخدام:</strong> جدول متابعة نظيف مع ملخص ورسم بياني، بُني بـ Excel وGoogle Sheets وPython.',
+            '// Cleaning Results': '// نتائج التنظيف',
+            '+ 1,200 Raw Rows Processed': '+ معالجة 1,200 صف خام',
+            '+ Duplicates Removed': '+ إزالة التكرار',
+            '+ Text Prices Converted to Numbers': '+ تحويل الأسعار النصية إلى أرقام',
+            '+ Original File Preserved': '+ حفظ الملف الأصلي',
             'Qualifications': 'المؤهلات',
             'Education &amp; <span class="gradient-text">Certifications</span>': 'التعليم و<span class="gradient-text">الشهادات</span>',
             'Bachelor of Social Work': 'بكالوريوس الخدمة الاجتماعية',
