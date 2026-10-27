@@ -153,6 +153,11 @@
             box-shadow: 0 2px 10px rgba(6, 182, 212, 0.4);
         }
 
+        @media (max-width: 480px) {
+            .glass-nav { gap: 0.1rem; padding: 0.35rem 0.4rem; }
+            .nav-pill { font-size: 0.66rem; padding: 0.35rem 0.42rem; }
+        }
+        @media (max-width: 380px) { .nav-pill { font-size: 0.62rem; padding: 0.35rem 0.34rem; } }
         .nav-pill .caret { font-size: 0.65rem; margin-left: 0.2rem; }
         .proj-menu {
             display: none;
@@ -538,6 +543,7 @@
                         <li>Custom Web Systems & Admin Panels</li>
                         <li>HTML / CSS / JavaScript</li>
                         <li>Landing Page Design & Development</li>
+                        <li>Firebase & Cloud Databases</li>
                     </ul>
                 </div>
                 <div class="info-card">
@@ -549,6 +555,8 @@
                         <li>Data Validation & Dropdowns</li>
                         <li>Formulas & Automated Reports</li>
                         <li>Interactive Excel Dashboards</li>
+                        <li>Python & Pandas Data Processing</li>
+                        <li>SQL & Database Queries</li>
                     </ul>
                 </div>
             </div>
@@ -686,11 +694,12 @@
                 <div class="project-meta">E-COMMERCE - FULL STACK ONLINE STORE</div>
                 <div class="sp-layout" style="display:grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem; align-items:start;">
                     <div>
-                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A bilingual (Arabic / English) online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts and automatic oil-change reminders, plus an admin dashboard for sales and inventory.</p>
+                        <p style="font-size:0.9rem; margin-bottom: 0.75rem;">A bilingual online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts, automatic oil-change reminders, and an admin dashboard.</p>
                         <ul style="margin:0 0 0.75rem 0;"><li><strong>Customer Experience:</strong> AI oil-selection assistant, product filters, and reminders by email and browser notification.</li><li><strong>Admin Dashboard:</strong> Sales and inventory KPIs, orders, reports, purchase invoices, and low-stock alerts.</li></ul>
                         <div style="background: var(--inset-bg); padding: 0.75rem; border-radius: 8px; font-family: monospace; font-size: 0.8rem; color: var(--inset-text); margin-bottom: 0.75rem;">
                             <div style="color: var(--accent); margin-bottom: 0.2rem;">// Store Highlights</div>
                             <div>+ Laravel, PHP &amp; MySQL</div><div>+ AI Oil-Selection Assistant</div><div>+ AR/EN, Light/Dark, Responsive</div><div>+ Delivered Ready to Run</div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;"><a href="https://zeytek.online/" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem; border-radius:8px; background: var(--accent); color:var(--on-accent); font-weight:600; font-size:0.85rem; text-decoration:none;">Visit the Live Store</a></div>
                         </div>
                         
                     </div>
@@ -945,7 +954,7 @@
                 project1: ['sp-dashboard.webp', 'sp-bulk_out.webp', 'sp-approvals.webp', 'sp-permissions.webp', 'sp-branding.webp', 'sp-mobile_note.webp'],
                 project2: ['lp-hero.webp', 'lp-features.webp', 'lp-fefo.webp', 'lp-problems.webp', 'lp-steps.webp', 'lp-whofor.webp'],
                 project3: ['sales-dash.webp', 'sales-volume.webp', 'sales-growth.webp', 'sales-share.webp', 'sales-table.webp'],
-                project4: ['zy-home-en.webp', 'zy-themes.webp', 'zy-shop.webp', 'zy-assistant.webp', 'zy-admin.webp', 'zy-report.webp'],
+                project4: ['zy-home-en.webp', 'zy-themes.webp', 'zy-shop-en.webp', 'zy-assistant.webp', 'zy-admin.webp', 'zy-report.webp'],
                 project5: ['cl-raw.webp', 'cl-steps.webp', 'cl-clean.webp', 'cl-summary.webp']
             },
             ar: {
@@ -1080,6 +1089,9 @@
             'Data Validation &amp; Dropdowns': 'التحقق من البيانات والقوائم المنسدلة',
             'Formulas &amp; Automated Reports': 'المعادلات والتقارير الآلية',
             'Interactive Excel Dashboards': 'لوحات Excel تفاعلية',
+            'SQL &amp; Database Queries': 'استعلامات SQL وقواعد البيانات',
+            'Python &amp; Pandas Data Processing': 'معالجة البيانات بـ Python وPandas',
+            'Firebase &amp; Cloud Databases': 'Firebase وقواعد البيانات السحابية',
             'WHAT I OFFER': 'ما أقدّمه',
             'Services &amp; <span class="gradient-text">Approach</span>': 'الخدمات و<span class="gradient-text">أسلوب العمل</span>',
             'Main Services Provided': 'الخدمات الرئيسية',
@@ -1105,6 +1117,7 @@
             '+ Custom Permission Matrix': '+ مصفوفة صلاحيات مخصصة',
             '+ AR/EN, Light/Dark, Mobile Ready': '+ عربي/إنجليزي، فاتح/داكن، يعمل على الموبايل',
             'Try the Live Demo': 'جرّب النسخة التجريبية',
+            'Visit the Live Store': 'زيارة المتجر',
             'Portfolio - Project 02': 'أعمالي - المشروع 02',
             '<span class="gradient-text">Landing Page</span>': '<span class="gradient-text">صفحة هبوط</span>',
             'LANDING PAGE DESIGN &amp; DEVELOPMENT': 'تصميم وتطوير صفحة هبوط',
@@ -1132,7 +1145,7 @@
             'Portfolio - Project 05': 'أعمالي - المشروع 05',
             'Zeytek <span class="gradient-text">Car-Oil Store</span>': 'متجر <span class="gradient-text">زيتك لزيوت السيارات</span>',
             'E-COMMERCE - FULL STACK ONLINE STORE': 'تجارة إلكترونية - متجر Full Stack',
-            'A bilingual (Arabic / English) online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts and automatic oil-change reminders, plus an admin dashboard for sales and inventory.': 'متجر إلكتروني ثنائي اللغة (عربي / إنجليزي) لزيوت السيارات، بمساعد ذكي يساعد العميل على اختيار الزيت المناسب، وتنبيهات عند توفر المنتج وتذكير تلقائي بموعد تغيير الزيت، مع لوحة تحكم للمدير للمبيعات والمخزون.',
+            'A bilingual online store for car oils, with an AI assistant that helps customers choose the right oil, back-in-stock alerts, automatic oil-change reminders, and an admin dashboard.': 'متجر إلكتروني ثنائي اللغة (عربي / إنجليزي) لزيوت السيارات، بمساعد ذكي يساعد العميل على اختيار الزيت المناسب، وتنبيهات عند توفر المنتج وتذكير تلقائي بموعد تغيير الزيت، مع لوحة تحكم للمدير للمبيعات والمخزون.',
             '<strong>Customer Experience:</strong> AI oil-selection assistant, product filters, and reminders by email and browser notification.': '<strong>تجربة العميل:</strong> مساعد ذكي لاختيار الزيت ومرشحات للمنتجات وتذكيرات عبر البريد الإلكتروني وإشعارات المتصفح.',
             '<strong>Admin Dashboard:</strong> Sales and inventory KPIs, orders, reports, purchase invoices, and low-stock alerts.': '<strong>لوحة تحكم المدير:</strong> مؤشرات المبيعات والمخزون والطلبات والتقارير وفواتير الشراء وتنبيهات نقص المخزون.',
             '// Store Highlights': '// أبرز ما في المتجر',
